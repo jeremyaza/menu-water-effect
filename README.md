@@ -7,7 +7,7 @@ A simple menu that simulates the effect of a drop of water
 
 ## Live Application URL ✨
 
-The Application is deployed in
+The Application is deployed in https://menu-water-effect.vercel.app/
 
 Click on the link to see the web
 
