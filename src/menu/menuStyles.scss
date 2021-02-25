@@ -1,0 +1,103 @@
+.content_main__menu,
+.menu,
+.link__menu {
+  display: flex;
+  align-items: center;
+}
+
+.content_main__menu {
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+}
+.menu {
+  width: 500px;
+  background-color: white;
+  box-shadow: 0px 0px 20px 5px rgb(196, 196, 196);
+  border-radius: 10px;
+}
+
+.link__menu {
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  position: relative;
+  .icon_link__menu {
+    margin: 1.5rem 0 2.5rem;
+    z-index: 1;
+  }
+  .info_link__menu {
+    background-color: #3dd2ec;
+    width: 100%;
+    padding: 1rem 0;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 19%;
+      left: 50%;
+      transform: translate(-50%, -19%);
+      background-color: #3dd2ec;
+      height: 40px;
+      width: 40px;
+      border: none;
+      border-radius: 100px;
+      animation: effect-water-out 0.7s ease-in forwards;
+    }
+  }
+  &:hover,
+  &:active {
+    color: rgb(109, 27, 109);
+    .info_link__menu {
+      &::before {
+        animation: effect-water 0.8s ease-out forwards;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 49%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 30px;
+        width: 100%;
+        background: url("../resources/water.svg") no-repeat center / cover;
+        animation: wavy-effect 0.4s ease-out forwards;
+      }
+    }
+  }
+}
+
+@keyframes effect-water {
+  0% {
+    transform: translate(-50%, 140%) scale(0.3);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -20%) scale(0.8);
+    opacity: 1;
+  }
+}
+
+@keyframes effect-water-out {
+  0% {
+    transform: translate(-50%, -23%) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 140%) scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes wavy-effect {
+  0% {
+    transform-origin: center;
+    transform: translate(-50%, 40%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -5%);
+    opacity: 1;
+  }
+}
